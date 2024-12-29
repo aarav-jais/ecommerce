@@ -1,0 +1,37 @@
+{% extends 'Index.html' %}
+
+{% block Category %}
+{% endblock Category %}
+
+{% block Header %}	
+<div id="top-bar" class="container">
+			<div class="row">
+				<div class="span4">
+					<form method="POST" class="search_form" action="{{curl}}customerapp/">
+						{% csrf_token %}
+						<div style="display: flex;">
+							<input type="text" 
+							name="search"
+							style="color: black;" Placeholder="eg. PUMA">&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href=""><button class="btn btn-inverse" type="submit">Search</button></a>
+						</div>
+					</form>
+				</div>
+				<div class="span8">
+					<div class="account pull-right">
+						<ul class="user-menu">				
+							<li><a href="{{curl}}customerapp/">CustomerHome</a></li>
+							<li><a href="{{curl}}customerapp/editprofile/">EditProfile</a></li>
+							<li><a href="{{curl}}customerapp/changepassword/">ChangePassword</a></li>	
+							<li><a href="{{curl}}customerapp/cart/">Cart</a></li>				
+							<li><a href="{{curl}}customerapp/logout/">Logout</a></li>		
+						</ul>
+					</div>
+				</div>
+			</div>
+</div>
+{% endblock Header %}
+
+
+{% block Client %}
+{% endblock Client %}
